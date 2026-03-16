@@ -57,6 +57,9 @@ run_poc "Rogue Certificate Forgery" "alipay-collision/poc-06-rogue-cert-forgery/
 echo "═══ PHASE 4: FULL COMPROMISE — Large-Scale & Chain Attacks ═══"
 run_poc "Batch GCD (RSA Key Factoring)" "alipay-collision/poc-07-batch-gcd/verify-batch-gcd.sh"
 run_poc "SHA-1 Certificate Collision" "alipay-collision/poc-07-sha1-cert-collision/verify-sha1-cert.sh"
+run_poc "APK V1 Signature Bypass" "alipay-collision/poc-09-apk-v1-bypass/verify-apk-bypass.sh"
+run_poc "TLS Interception (Factored Keys)" "alipay-collision/poc-10-tls-interception/verify-tls-interception.sh"
+run_poc "Attack Timeline (2004-2026)" "alipay-collision/poc-11-timeline/verify-timeline.sh"
 
 # Summary
 echo ""

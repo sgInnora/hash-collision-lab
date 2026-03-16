@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Attack Timeline: Alipay Certificate Vulnerability</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 28px 40px 16px;
+      border-bottom: 1px solid #21262d;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 600;
+      color: #f0f6fc;
+      letter-spacing: 0.02em;
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #8b949e;
+    }
+
+    .legend {
+      display: flex;
+      gap: 24px;
+      padding: 12px 40px;
+      border-bottom: 1px solid #21262d;
+      flex-wrap: wrap;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #8b949e;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    #chart-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    #chart {
+      display: block;
+    }
+
+    .lane-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      fill: #6e7681;
+    }
+
+    .lane-bg-even { fill: #161b22; }
+    .lane-bg-odd  { fill: #0d1117; }
+
+    .axis path, .axis line {
+      stroke: #30363d;
+    }
+
+    .axis text {
+      fill: #6e7681;
+      font-size: 11px;
+    }
+
+    .gridline {
+      stroke: #21262d;
+      stroke-width: 1;
+    }
+
+    .event-node {
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    .event-node:hover { opacity: 0.85; }
+
+    .event-node circle {
+      stroke-width: 2;
+    }
+
+    .event-label {
+      font-size: 10.5px;
+      fill: #c9d1d9;
+      pointer-events: none;
+      dominant-baseline: middle;
+    }
+
+    /* Tooltip */
+    #tooltip {
+      position: fixed;
+      display: none;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 14px 16px;
+      max-width: 300px;
+      pointer-events: none;
+      z-index: 1000;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    }
+
+    #tooltip .tt-year {
+      font-size: 11px;
+      color: #8b949e;
+      margin-bottom: 4px;
+      font-weight: 500;
+    }
+
+    #tooltip .tt-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #f0f6fc;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    #tooltip .tt-desc {
+      font-size: 12px;
+      color: #8b949e;
+      line-height: 1.6;
+    }
+
+    #tooltip .tt-lane {
+      margin-top: 8px;
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .tt-lane-crypto    { background: #1c2d42; color: #58a6ff; }
+    .tt-lane-alipay    { background: #3d1a1a; color: #ff7b72; }
+    .tt-lane-industry  { background: #1e2a1e; color: #56d364; }
+
+    /* Zoom controls */
+    .controls {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .ctrl-btn {
+      background: #21262d;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+      border-radius: 6px;
+      padding: 5px 11px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.1s;
+      user-select: none;
+    }
+
+    .ctrl-btn:hover { background: #30363d; }
+
+    /* Connector lines from event to axis */
+    .connector {
+      stroke: #30363d;
+      stroke-width: 1;
+      stroke-dasharray: 3,3;
+    }
+
+    footer {
+      padding: 20px 40px 28px;
+      border-top: 1px solid #21262d;
+      margin-top: 8px;
+    }
+
+    .conclusion-box {
+      background: #3d1a1a;
+      border: 1px solid #da3633;
+      border-radius: 8px;
+      padding: 16px 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .conclusion-box .verdict {
+      font-size: 15px;
+      font-weight: 600;
+      color: #ff7b72;
+      margin-bottom: 6px;
+    }
+
+    .conclusion-box p {
+      font-size: 13px;
+      color: #ffa198;
+      line-height: 1.7;
+    }
+
+    .year-marker-line {
+      stroke: #30363d;
+      stroke-width: 1;
+    }
+
+    .cert-span-rect {
+      fill: rgba(218, 54, 51, 0.08);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Attack Timeline: Alipay Certificate Cryptographic Vulnerability</h1>
+  <p>Scroll or pinch to zoom &bull; Click and drag to pan &bull; Hover events for details</p>
+</header>
+
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#58a6ff"></div>
+    <span>Cryptographic Attacks</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#ff7b72"></div>
+    <span>Alipay Events</span>
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:#56d364"></div>
+    <span>Industry Response</span>
+  </div>
+  <div class="legend-item" style="margin-left: auto;">
+    <div class="legend-dot" style="background:#da3633; border-radius:2px;"></div>
+    <span>Alipay vulnerability window (2009–present)</span>
+  </div>
+</div>
+
+<div id="chart-container">
+  <div class="controls">
+    <button class="ctrl-btn" id="btn-zoom-in">+</button>
+    <button class="ctrl-btn" id="btn-zoom-out">−</button>
+    <button class="ctrl-btn" id="btn-reset">Reset</button>
+  </div>
+  <svg id="chart"></svg>
+</div>
+
+<div id="tooltip"></div>
+
+<footer>
+  <div class="conclusion-box">
+    <div class="verdict">CONCLUSION</div>
+    <p>
+      Alipay's APK signing certificate was issued on <strong>2009-12-16</strong> using
+      <code>md5WithRSAEncryption</code> with RSA-1024 — algorithms that were already broken or
+      deprecated at the time of issuance. The certificate remains in active use
+      <strong>17 years later</strong>, spanning the entire era of practical MD5 collisions,
+      SHA-1 collisions, and RSA-1024 factorization threats.
+      <br><br>
+      <strong>Alipay's certificate was issued AFTER MD5 was broken, and remains in use 17 years later.</strong>
+    </p>
+  </div>
+</footer>
+
+<script>
+// ─────────────────────────────────────────────
+// DATA
+// ─────────────────────────────────────────────
+const LANE_CRYPTO   = "Cryptographic Attacks";
+const LANE_ALIPAY   = "Alipay";
+const LANE_INDUSTRY = "Industry Response";
+
+const events = [
+  {
+    year: 2004.5,
+    dateStr: "2004",
+    lane: LANE_CRYPTO,
+    title: "MD5 Collision Attack (Wang et al.)",
+    desc: "First theoretical MD5 collision demonstrated. Complexity reduced to 2^39 operations. MD5 is fundamentally broken for security purposes.",
+    severity: "high"
+  },
+  {
+    year: 2005.3,
+    dateStr: "2005",
+    lane: LANE_CRYPTO,
+    title: "SHA-1 Theoretical Attack (Wang et al.)",
+    desc: "Complexity of SHA-1 collision reduced from 2^80 to 2^69. SHA-1 placed on deprecation path by security community.",
+    severity: "high"
+  },
+  {
+    year: 2006.4,
+    dateStr: "2006",
+    lane: LANE_CRYPTO,
+    title: "FastColl Released (Marc Stevens)",
+    desc: "Tool generating MD5 collisions in SECONDS on consumer hardware. Practical exploitation of MD5 becomes trivial.",
+    severity: "critical"
+  },
+  {
+    year: 2008.5,
+    dateStr: "2008",
+    lane: LANE_CRYPTO,
+    title: "MD5 Chosen-Prefix CA Certificate Forgery",
+    desc: "Researchers (Sotirov, Stevens et al.) demonstrate forging a rogue CA certificate using MD5 chosen-prefix collision. PKI trust model compromised.",
+    severity: "critical"
+  },
+  {
+    year: 2009.2,
+    dateStr: "2009",
+    lane: LANE_CRYPTO,
+    title: "RSA-768 Factored (Lenstra et al.)",
+    desc: "RSA-768 bit key successfully factored. Demonstrates RSA-1024 is on a credible path to factorization. Major wake-up call for RSA-1024 users.",
+    severity: "high"
+  },
+  {
+    year: 2009.95,
+    dateStr: "2009-12-16",
+    lane: LANE_ALIPAY,
+    title: "⚠ Alipay Issues APK Signing Certificate",
+    desc: "Alipay signs its Android APK certificate using md5WithRSAEncryption with RSA-1024. Both algorithms were already known-broken or deprecated at this date.",
+    severity: "critical"
+  },
+  {
+    year: 2010.5,
+    dateStr: "2010",
+    lane: LANE_INDUSTRY,
+    title: "Major CAs Drop MD5 Certificate Support",
+    desc: "Following the 2008 CA forgery demo, all major Certificate Authorities stop issuing MD5-signed certificates. Industry acknowledges MD5 is unsafe.",
+    severity: "medium"
+  },
+  {
+    year: 2012.3,
+    dateStr: "2012",
+    lane: LANE_CRYPTO,
+    title: "Flame Malware — MD5 In-the-Wild Exploit",
+    desc: "Nation-state malware uses MD5 chosen-prefix collision to forge a Microsoft Windows Update code-signing certificate. First real-world exploitation of MD5 for certificate forgery.",
+    severity: "critical"
+  },
+  {
+    year: 2012.7,
+    dateStr: "2012",
+    lane: LANE_CRYPTO,
+    title: "Batch GCD Attack (Heninger et al.)",
+    desc: "Large-scale RSA key factorization via shared prime factors across millions of keys. Demonstrates systemic RSA key generation weaknesses in the wild.",
+    severity: "high"
+  },
+  {
+    year: 2013.5,
+    dateStr: "2013",
+    lane: LANE_INDUSTRY,
+    title: "NIST Formally Deprecates RSA-1024",
+    desc: "NIST SP 800-131A mandates minimum 2048-bit RSA keys for federal use. RSA-1024 officially retired from all standards and compliance frameworks.",
+    severity: "high"
+  },
+  {
+    year: 2015.5,
+    dateStr: "2015",
+    lane: LANE_CRYPTO,
+    title: "SHA-1 Freestart Collision (Stevens et al.)",
+    desc: "Full SHA-1 freestart collision demonstrated, showing a complete SHA-1 collision is computationally feasible with sufficient resources.",
+    severity: "high"
+  },
+  {
+    year: 2017.1,
+    dateStr: "2017",
+    lane: LANE_CRYPTO,
+    title: "SHAttered — First Practical SHA-1 Collision",
+    desc: "Google/CWI publish two PDF files with identical SHA-1 hash. Cost: ~$110,000 USD in cloud compute (6,500 CPU-years + 110 GPU-years). SHA-1 is definitively broken.",
+    severity: "critical"
+  },
+  {
+    year: 2017.4,
+    dateStr: "2017",
+    lane: LANE_CRYPTO,
+    title: "Janus Vulnerability CVE-2017-13156",
+    desc: "APK files can be simultaneously valid DEX files. APK v1-only signatures can be bypassed by prepending malicious DEX content. Affects all apps not using v2 signatures.",
+    severity: "critical"
+  },
+  {
+    year: 2017.7,
+    dateStr: "2017",
+    lane: LANE_INDUSTRY,
+    title: "Google Play Mandates APK Signature Scheme v2",
+    desc: "Google requires all new apps to use APK Signature Scheme v2, which covers the entire ZIP archive and is immune to Janus-style attacks.",
+    severity: "medium"
+  },
+  {
+    year: 2018.5,
+    dateStr: "2018",
+    lane: LANE_INDUSTRY,
+    title: "Android 9 Warns on Legacy Signatures",
+    desc: "Android 9 (Pie) introduces deprecation warnings for apps using only v1 APK signatures. The ecosystem pushes toward v2/v3.",
+    severity: "medium"
+  },
+  {
+    year: 2020.5,
+    dateStr: "2020",
+    lane: LANE_CRYPTO,
+    title: "SHA-1 is a Shambles — Chosen-Prefix at $45K",
+    desc: "Leurent & Peyrin demonstrate SHA-1 chosen-prefix collision for ~$45,000 USD. Within reach of criminal organizations. PGP key forgery demonstrated.",
+    severity: "critical"
+  },
+  {
+    year: 2023.5,
+    dateStr: "2023",
+    lane: LANE_CRYPTO,
+    title: "SHA-1 Collision Cost Drops to ~$11K",
+    desc: "Continued GPU price decreases push SHA-1 chosen-prefix collision cost to approximately $11,000 USD. Attack accessible to motivated individuals.",
+    severity: "critical"
+  },
+  {
+    year: 2025.3,
+    dateStr: "2025",
+    lane: LANE_ALIPAY,
+    title: "⚠ Alipay Still Uses md5WithRSAEncryption + RSA-1024",
+    desc: "Alipay Android APK signing certificate remains unchanged: md5WithRSAEncryption, RSA-1024, issued 2009-12-16. 16 years with no algorithm migration. No response to security community.",
+    severity: "critical"
+  },
+  {
+    year: 2026.17,
+    dateStr: "2026-03",
+    lane: LANE_ALIPAY,
+    title: "⚠ Innora AI Completes 11-PoC Attack Chain",
+    desc: "Innora AI Security Research completes full attack chain verification across 11 PoCs: MD5 cert collision, RSA-1024 weakness, DES brute-force, Janus APK exploit, rogue cert forgery, batch GCD, SHA-1 collision, weak random number analysis, and more.",
+    severity: "critical"
+  },
+  {
+    year: 2026.20,
+    dateStr: "2026-03-10",
+    lane: LANE_ALIPAY,
+    title: "⚠ Ant Group Responds: 'Normal Functionality'",
+    desc: "Following responsible disclosure, Ant Group responds claiming the behavior is 'normal functionality.' Refuses to acknowledge any cryptographic vulnerability. Certificate remains deployed in production.",
+    severity: "critical"
+  }
+];
+
+// ─────────────────────────────────────────────
+// LAYOUT CONFIG
+// ─────────────────────────────────────────────
+const LANES = [LANE_CRYPTO, LANE_ALIPAY, LANE_INDUSTRY];
+const LANE_COLORS = {
+  [LANE_CRYPTO]:   "#58a6ff",
+  [LANE_ALIPAY]:   "#ff7b72",
+  [LANE_INDUSTRY]: "#56d364"
+};
+
+const MARGIN = { top: 50, right: 60, bottom: 40, left: 180 };
+const LANE_HEIGHT = 130;
+const TOTAL_HEIGHT = MARGIN.top + LANES.length * LANE_HEIGHT + MARGIN.bottom;
+
+const NODE_R_NORMAL   = 8;
+const NODE_R_CRITICAL = 11;
+
+// ─────────────────────────────────────────────
+// SVG SETUP
+// ─────────────────────────────────────────────
+const svg = d3.select("#chart");
+const chartContainer = document.getElementById("chart-container");
+
+function getWidth() {
+  return chartContainer.clientWidth || window.innerWidth;
+}
+
+let W = getWidth();
+svg.attr("width", W).attr("height", TOTAL_HEIGHT);
+
+const innerW = W - MARGIN.left - MARGIN.right;
+
+const g = svg.append("g")
+  .attr("transform", `translate(${MARGIN.left},${MARGIN.top})`);
+
+// ─────────────────────────────────────────────
+// SCALES
+// ─────────────────────────────────────────────
+const xScale = d3.scaleLinear()
+  .domain([2003.5, 2026.7])
+  .range([0, innerW]);
+
+// ─────────────────────────────────────────────
+// ZOOM
+// ─────────────────────────────────────────────
+const zoom = d3.zoom()
+  .scaleExtent([0.5, 8])
+  .on("zoom", zoomed);
+
+svg.call(zoom);
+
+let currentTransform = d3.zoomIdentity;
+
+function zoomed(event) {
+  currentTransform = event.transform;
+  render(currentTransform);
+}
+
+// ─────────────────────────────────────────────
+// RENDER FUNCTION
+// ─────────────────────────────────────────────
+function render(transform) {
+  g.selectAll("*").remove();
+
+  const xScaleZ = transform.rescaleX(xScale);
+
+  // Lane backgrounds
+  LANES.forEach((lane, i) => {
+    g.append("rect")
+      .attr("class", i % 2 === 0 ? "lane-bg-even" : "lane-bg-odd")
+      .attr("x", 0)
+      .attr("y", i * LANE_HEIGHT)
+      .attr("width", innerW)
+      .attr("height", LANE_HEIGHT);
+  });
+
+  // Alipay certificate vulnerability span
+  const certStart = xScaleZ(2009.95);
+  const certEnd   = xScaleZ(2026.4);
+  g.append("rect")
+    .attr("class", "cert-span-rect")
+    .attr("x", certStart)
+    .attr("y", LANE_HEIGHT)
+    .attr("width", Math.max(0, certEnd - certStart))
+    .attr("height", LANE_HEIGHT);
+
+  // Vertical year gridlines
+  const years = d3.range(2004, 2027, 1);
+  years.forEach(yr => {
+    const xPos = xScaleZ(yr);
+    if (xPos < 0 || xPos > innerW) return;
+    g.append("line")
+      .attr("class", "gridline")
+      .attr("x1", xPos).attr("y1", 0)
+      .attr("x2", xPos).attr("y2", LANES.length * LANE_HEIGHT);
+  });
+
+  // X axis
+  const xAxis = d3.axisBottom(xScaleZ)
+    .tickFormat(d => {
+      const yr = Math.round(d);
+      return (Number.isInteger(d) && yr >= 2004 && yr <= 2026) ? String(yr) : "";
+    })
+    .ticks(22);
+
+  g.append("g")
+    .attr("class", "axis")
+    .attr("transform", `translate(0, ${LANES.length * LANE_HEIGHT})`)
+    .call(xAxis);
+
+  // Lane labels (fixed, outside zoom)
+  LANES.forEach((lane, i) => {
+    g.append("text")
+      .attr("class", "lane-label")
+      .attr("x", -12)
+      .attr("y", i * LANE_HEIGHT + LANE_HEIGHT / 2)
+      .attr("text-anchor", "end")
+      .attr("dominant-baseline", "middle")
+      .attr("fill", LANE_COLORS[lane])
+      .text(lane);
+  });
+
+  // Lane dividers
+  LANES.forEach((_, i) => {
+    g.append("line")
+      .attr("x1", 0).attr("y1", i * LANE_HEIGHT)
+      .attr("x2", innerW).attr("y2", i * LANE_HEIGHT)
+      .attr("stroke", "#21262d").attr("stroke-width", 1);
+  });
+  g.append("line")
+    .attr("x1", 0).attr("y1", LANES.length * LANE_HEIGHT)
+    .attr("x2", innerW).attr("y2", LANES.length * LANE_HEIGHT)
+    .attr("stroke", "#21262d").attr("stroke-width", 1);
+
+  // ─── Events ───
+  // Jitter overlapping events within a lane
+  const laneEventMap = {};
+  LANES.forEach(l => { laneEventMap[l] = []; });
+  events.forEach(ev => laneEventMap[ev.lane].push(ev));
+
+  events.forEach(ev => {
+    const laneIdx = LANES.indexOf(ev.lane);
+    const laneCenterY = laneIdx * LANE_HEIGHT + LANE_HEIGHT / 2;
+    const xPos = xScaleZ(ev.year);
+
+    if (xPos < -30 || xPos > innerW + 30) return;
+
+    const color = LANE_COLORS[ev.lane];
+    const r = ev.severity === "critical" ? NODE_R_CRITICAL : NODE_R_NORMAL;
+    const isAlipay = ev.lane === LANE_ALIPAY;
+
+    const nodeG = g.append("g")
+      .attr("class", "event-node")
+      .attr("transform", `translate(${xPos}, ${laneCenterY})`)
+      .datum(ev);
+
+    // Glow ring for critical alipay events
+    if (isAlipay && ev.severity === "critical") {
+      nodeG.append("circle")
+        .attr("r", r + 5)
+        .attr("fill", "none")
+        .attr("stroke", color)
+        .attr("stroke-width", 1)
+        .attr("opacity", 0.3);
+    }
+
+    nodeG.append("circle")
+      .attr("r", r)
+      .attr("fill", color)
+      .attr("fill-opacity", ev.severity === "critical" ? 0.9 : 0.7)
+      .attr("stroke", color)
+      .attr("stroke-width", ev.severity === "critical" ? 2 : 1);
+
+    // Short date tick on axis
+    g.append("line")
+      .attr("class", "connector")
+      .attr("x1", xPos).attr("y1", laneCenterY + r + 2)
+      .attr("x2", xPos).attr("y2", LANES.length * LANE_HEIGHT);
+
+    // Event interaction
+    nodeG
+      .on("mousemove", function(event, d) {
+        showTooltip(event, d);
+      })
+      .on("mouseleave", function() {
+        hideTooltip();
+      });
+  });
+}
+
+// ─────────────────────────────────────────────
+// TOOLTIP
+// ─────────────────────────────────────────────
+const tooltip = document.getElementById("tooltip");
+
+function showTooltip(event, d) {
+  const laneClass = {
+    [LANE_CRYPTO]:   "tt-lane-crypto",
+    [LANE_ALIPAY]:   "tt-lane-alipay",
+    [LANE_INDUSTRY]: "tt-lane-industry"
+  }[d.lane];
+
+  tooltip.innerHTML = `
+    <div class="tt-year">${d.dateStr}</div>
+    <div class="tt-title">${d.title}</div>
+    <div class="tt-desc">${d.desc}</div>
+    <span class="tt-lane ${laneClass}">${d.lane}</span>
+  `;
+  tooltip.style.display = "block";
+  positionTooltip(event);
+}
+
+function positionTooltip(event) {
+  const ttW = 300;
+  const ttH = tooltip.offsetHeight;
+  let x = event.clientX + 16;
+  let y = event.clientY - ttH / 2;
+
+  if (x + ttW > window.innerWidth - 8) x = event.clientX - ttW - 16;
+  if (y < 8) y = 8;
+  if (y + ttH > window.innerHeight - 8) y = window.innerHeight - ttH - 8;
+
+  tooltip.style.left = x + "px";
+  tooltip.style.top  = y + "px";
+}
+
+function hideTooltip() {
+  tooltip.style.display = "none";
+}
+
+// ─────────────────────────────────────────────
+// ZOOM CONTROLS
+// ─────────────────────────────────────────────
+document.getElementById("btn-zoom-in").addEventListener("click", () => {
+  svg.transition().duration(250).call(zoom.scaleBy, 1.5);
+});
+
+document.getElementById("btn-zoom-out").addEventListener("click", () => {
+  svg.transition().duration(250).call(zoom.scaleBy, 0.67);
+});
+
+document.getElementById("btn-reset").addEventListener("click", () => {
+  svg.transition().duration(350).call(zoom.transform, d3.zoomIdentity);
+});
+
+// ─────────────────────────────────────────────
+// RESPONSIVE RESIZE
+// ─────────────────────────────────────────────
+window.addEventListener("resize", () => {
+  W = getWidth();
+  svg.attr("width", W);
+  const newInnerW = W - MARGIN.left - MARGIN.right;
+  xScale.range([0, newInnerW]);
+  render(currentTransform);
+});
+
+// ─────────────────────────────────────────────
+// INITIAL RENDER
+// ─────────────────────────────────────────────
+render(d3.zoomIdentity);
+</script>
+</body>
+</html>

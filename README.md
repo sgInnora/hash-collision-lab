@@ -326,6 +326,65 @@ hash-collision-lab/
 
 Every day this 2009-era certificate remains in use is a day the largest payment app in China operates with cryptographic protections that were deprecated over a decade ago.
 
+## Additional PoCs (Phase 2)
+
+### poc-09: APK V1 Signature Bypass (`alipay-collision/poc-09-apk-v1-bypass/`)
+
+**Attack**: Demonstrate 5 distinct bypass techniques against v1-only signed APKs.
+
+- Post-ZIP data injection (v1 ignores data after EOCD)
+- ZIP comment injection (comments not covered by signature)
+- Unsigned entry injection (entries not in MANIFEST.MF are unchecked)
+- Janus DEX prepend (see poc-05)
+- DEX substitution via collision (see poc-05b)
+
+**5 of 7 attack vectors are exclusive to v1-only signing.** Upgrading to v2+v3 eliminates them instantly.
+
+### poc-10: TLS Interception (`alipay-collision/poc-10-tls-interception/`)
+
+**Attack**: Demonstrate real-world impact of Batch GCD factored keys.
+
+- Probed 5 servers from MEGA_VULNERABLE.json: **4 still alive, 3 still serving TLS with broken keys**
+- Generated exploitation commands (Wireshark decryption + mitmproxy MITM)
+- Documented passive decryption, active MITM, and server impersonation capabilities
+
+These are not theoretical — real production servers are running factored RSA keys **right now**.
+
+### poc-11: Attack Timeline (`alipay-collision/poc-11-timeline/`)
+
+Interactive visualization of the 22-year timeline (2004-2026) from MD5's theoretical break to Innora AI's complete attack chain verification.
+
+- `timeline.md` — Mermaid diagram for embedding
+- `index.html` — D3.js interactive timeline (standalone, dark theme)
+
+### APK Crypto Audit Tool (`tools/apk-crypto-audit/`)
+
+CLI tool for automated APK cryptographic weakness detection:
+
+```bash
+python3 tools/apk-crypto-audit/apk-crypto-audit.py app.apk
+python3 tools/apk-crypto-audit/apk-crypto-audit.py --json ./apk-directory/
+```
+
+Checks: certificate algorithm, key size, signing scheme version, certificate validity, key reuse, self-signed status.
+
+## Related Research
+
+This cryptographic analysis complements Innora AI's earlier discovery of **17 runtime vulnerabilities** in Alipay's DeepLink and WebView JSBridge implementation (CVSS 9.3):
+
+**[Alipay DeepLink Security Research](https://innora.ai/zfb/)** — Full report with 308 server logs, 42 screenshots, cross-device verification.
+
+Key findings from the DeepLink research:
+- Whitelist bypass via `ds.alipay.com` open redirect
+- Silent GPS location extraction
+- Device fingerprint harvesting (30+ fields)
+- Transfer page manipulation with pre-filled attacker accounts
+- Navigation to 18 sensitive internal pages
+
+**Ant Group's response**: Classified all 17 vulnerabilities as *"normal functionality"* on March 10, 2026.
+
+Combined attack surface: **17 runtime vulnerabilities + 15 cryptographic PoCs = 32 documented security failures** in a single payment application serving over 1 billion users.
+
 ## License
 
 MIT — Educational and security research purposes.
