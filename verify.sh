@@ -30,8 +30,8 @@ echo ""
 echo "━━━ MD5 Collision ━━━"
 echo "File A: md5-collision/innora-doc-A.pdf"
 echo "File B: md5-collision/innora-doc-B.pdf"
-MD5_A=$(md5sum md5-collision/innora-doc-A.pdf 2>/dev/null || md5 -q md5-collision/innora-doc-A.pdf)
-MD5_B=$(md5sum md5-collision/innora-doc-B.pdf 2>/dev/null || md5 -q md5-collision/innora-doc-B.pdf)
+MD5_A=$(md5sum md5-collision/innora-doc-A.pdf 2>/dev/null | cut -d' ' -f1 || md5 -q md5-collision/innora-doc-A.pdf)
+MD5_B=$(md5sum md5-collision/innora-doc-B.pdf 2>/dev/null | cut -d' ' -f1 || md5 -q md5-collision/innora-doc-B.pdf)
 echo "MD5 A: $MD5_A"
 echo "MD5 B: $MD5_B"
 if [ "$MD5_A" = "$MD5_B" ]; then

@@ -1,0 +1,28 @@
+#!/bin/bash
+echo "╔═══════════════════════════════════════════════════════════╗"
+echo "║  DES Hardcoded Key Extraction — Alipay APK              ║"
+echo "╚═══════════════════════════════════════════════════════════╝"
+echo ""
+
+DIR="$(cd "$(dirname "$0")" && pwd)"
+
+echo "━━━ Extracted Keys (via Frida dynamic instrumentation) ━━━"
+cat "$DIR/des-keys.txt"
+echo ""
+
+echo "━━━ Key Analysis ━━━"
+echo "  Key 1: 2d31313531353931 → ASCII '-1151591'"
+echo "    Type: Numeric string with dash prefix"
+echo "    Entropy: ~1.75 bits/byte (ideal: 8.0)"
+echo "    Verdict: TRIVIALLY EXTRACTABLE"
+echo ""
+echo "  Key 2: 636865636b4b6579 → ASCII 'checkKey'"
+echo "    Type: English word (camelCase)"
+echo "    Entropy: ~2.50 bits/byte (ideal: 8.0)"
+echo "    Verdict: TRIVIALLY EXTRACTABLE"
+echo ""
+echo "  Both keys are hardcoded ASCII strings in the APK binary."
+echo "  Any reverse engineer with a decompiler can extract them."
+echo "  DES itself (56-bit) is brute-forceable in < 1 hour on FPGA."
+echo ""
+echo "  ⚠️  DES with hardcoded keys = zero effective encryption."

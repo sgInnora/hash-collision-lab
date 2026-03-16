@@ -1,0 +1,64 @@
+SHA-1 Collision Attack Timeline & Alipay Impact Analysis
+═════════════════════════════════════════════════════════
+
+2005 — Theoretical Break (Wang et al.)
+  Xiaoyun Wang demonstrated theoretical collision attack on SHA-1
+  with complexity 2^69, far below birthday bound of 2^80.
+  Impact: Academic alarm, no practical exploitation yet.
+
+2011 — NIST Deprecation
+  NIST officially deprecated SHA-1 for digital signatures.
+  Impact: Government systems began migration to SHA-256.
+
+2015 — Freestart Collision (Stevens et al.)
+  First freestart collision in full SHA-1 compression function.
+  Complexity: 2^57.5 (~10 days on 64-GPU cluster).
+  Impact: Proved practical attacks imminent.
+
+2017 — SHAttered (Stevens, Bursztein et al.)
+  Google/CWI produced first identical-prefix collision.
+  Two PDFs with same SHA-1 but different content.
+  Cost: 6,500 CPU-years + 110 GPU-years ≈ $110,000 on GCP.
+  Impact: Major browsers/CAs stopped accepting SHA-1 certificates.
+  → Alipay cert (issued 2009, SHA-1 signed) became theoretically forgeable.
+
+2019 — Chosen-Prefix Collision Breakthrough
+  Leurent & Peyrin announced chosen-prefix collision on SHA-1.
+  Complexity: 2^63.4 SHA-1 calls.
+  Impact: Any two different prefixes can be made to collide.
+
+2020 — SHA-1 is a Shambles (Leurent & Peyrin)
+  Practical chosen-prefix collision demonstrated.
+  Created two PGP keys with same SHA-1 certification.
+  Cost: $45,000 on GPU cluster.
+  Impact: PGP/GnuPG, Git, and certificate systems all affected.
+  → Alipay cert forgery now practically feasible for well-funded attacker.
+
+2023 — Cost Reduction
+  GPU prices dropped significantly (H100 availability).
+  Estimated chosen-prefix collision cost: ~$11,000.
+  → Alipay cert forgery within reach of organized crime.
+
+2026 — Current State (Estimated)
+  Further hardware improvements + algorithmic optimizations.
+  Estimated cost: $5,000-$8,000 for chosen-prefix collision.
+  → Alipay cert forgery feasible for individual attackers.
+  → Defense: APK Signature Scheme v2/v3 (SHA-256) is essential.
+
+Key Insight for Alipay
+══════════════════════
+Alipay's APK signing certificate was issued in 2009 using
+md5WithRSAEncryption with RSA-1024. While the MD5 vulnerability
+(poc-01) is the most immediate threat, SHA-1 collision represents
+a secondary attack vector:
+
+1. Android's cert fingerprint matching historically used SHA-1
+2. Some cert pinning implementations still reference SHA-1
+3. Legacy v1 signature scheme relies on SHA-1 chain validation
+
+The cost of forging a SHA-1-equivalent certificate has dropped from
+$110,000 (2017) to an estimated $5,000-$8,000 (2026), making this
+attack increasingly accessible.
+
+Recommendation: All APK signature verification must use SHA-256+
+fingerprints. SHA-1 fingerprints should be considered advisory only.

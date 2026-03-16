@@ -1,0 +1,8 @@
+Alipay Captured DES Keys (from frida dynamic interception)
+
+Key 1: 2d31313531353931 = '-1151591'
+Key 2: 636865636b4b6579 = 'checkKey'
+
+Both are hardcoded ASCII strings. Zero cryptographic strength.
+DES itself is broken (56-bit, brute-forceable in hours).
+Hardcoded ASCII keys reduce this to trivial extraction.
