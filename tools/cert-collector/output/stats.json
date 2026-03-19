@@ -1,30 +1,30 @@
 {
-  "total_certs": 56,
-  "unique_moduli": 56,
-  "collection_date": "2026-03-20T06:21:33.718523",
+  "total_certs": 90,
+  "unique_moduli": 90,
+  "collection_date": "2026-03-20T06:57:37.751926",
   "key_size_distribution": {
-    "1024": 16,
-    "2048": 35,
-    "4096": 5
+    "1024": 39,
+    "2048": 44,
+    "4096": 7
   },
   "algorithm_distribution": {
     "unknown": 22,
-    "sha256": 18,
-    "sha384": 3,
-    "sha1": 12,
-    "md5": 1
+    "sha256": 25,
+    "sha384": 2,
+    "sha1": 37,
+    "md5": 4
   },
   "signing_scheme": {
-    "v1_only": 56,
+    "v1_only": 90,
     "v2_or_v3": 0
   },
-  "self_signed_count": 34,
+  "self_signed_count": 68,
   "key_reuse_groups": 0,
   "certs_in_reuse_groups": 0,
   "risk_summary": {
     "critical_lt1024": 0,
-    "high_1024": 16,
-    "medium_2048": 35,
-    "low_4096plus": 5
+    "high_1024": 39,
+    "medium_2048": 44,
+    "low_4096plus": 7
   }
 }
