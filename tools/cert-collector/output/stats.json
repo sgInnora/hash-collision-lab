@@ -1,0 +1,30 @@
+{
+  "total_certs": 53,
+  "unique_moduli": 53,
+  "collection_date": "2026-03-20T06:06:40.569708",
+  "key_size_distribution": {
+    "1024": 16,
+    "2048": 32,
+    "4096": 5
+  },
+  "algorithm_distribution": {
+    "unknown": 22,
+    "sha256": 17,
+    "sha384": 2,
+    "sha1": 11,
+    "md5": 1
+  },
+  "signing_scheme": {
+    "v1_only": 53,
+    "v2_or_v3": 0
+  },
+  "self_signed_count": 31,
+  "key_reuse_groups": 0,
+  "certs_in_reuse_groups": 0,
+  "risk_summary": {
+    "critical_lt1024": 0,
+    "high_1024": 16,
+    "medium_2048": 32,
+    "low_4096plus": 5
+  }
+}
