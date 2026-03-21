@@ -1,6 +1,6 @@
 # Hash Collision Lab
 
-> **Academic Paper**: Feng, J. (2026). *Broken by Design: A Systematic Analysis of Cryptographic Weaknesses in Alipay's APK Signing Infrastructure*. IACR Cryptology ePrint Archive, Report 2026/108361.
+> **Academic Paper**: Feng, J. (2026). *Broken By Design: A Longitudinal Analysis of Cryptographic Failures in Alipay Mobile Payment Infrastructure*. IACR Cryptology ePrint Archive, Report 2026/526.
 
 **A systematic cryptographic analysis of legacy APK signing infrastructure, demonstrating that `md5WithRSAEncryption` + RSA-1024 certificates — currently observed in active deployments — are susceptible to known cryptographic attacks.**
 
