@@ -1,8 +1,10 @@
-Alipay Captured DES Keys (from frida dynamic interception)
+Alipay Captured DES Keys (from Frida dynamic instrumentation)
 
-Key 1: 2d31313531353931 = '-1151591'
-Key 2: 636865636b4b6579 = 'checkKey'
+Key 1: [REDACTED] (Shannon entropy: 1.75 bits/byte — ASCII string, zero cryptographic strength)
+Key 2: [REDACTED] (Shannon entropy: 2.50 bits/byte — ASCII string, zero cryptographic strength)
 
-Both are hardcoded ASCII strings. Zero cryptographic strength.
+Both are hardcoded ASCII strings embedded in plaintext within the APK binary.
 DES itself is broken (56-bit, brute-forceable in hours).
-Hardcoded ASCII keys reduce this to trivial extraction.
+Hardcoded ASCII keys reduce this to trivial extraction via standard reverse engineering tools.
+
+Reproduction: Use Frida to hook javax.crypto.Cipher.init() and log the key parameter.

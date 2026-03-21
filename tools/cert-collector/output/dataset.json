@@ -161,7 +161,7 @@
     "source": "batch-gcd-import"
   },
   {
-    "apk_name": "南银法巴消金.apk",
+    "apk_name": "\u5357\u94f6\u6cd5\u5df4\u6d88\u91d1.apk",
     "apk_path": "batch-gcd-import",
     "apk_size": 0,
     "cert_file": "",
@@ -230,7 +230,7 @@
     "source": "batch-gcd-import"
   },
   {
-    "apk_name": "携程旅行_8.85.6_APKPure.apk",
+    "apk_name": "\u643a\u7a0b\u65c5\u884c_8.85.6_APKPure.apk",
     "apk_path": "batch-gcd-import",
     "apk_size": 0,
     "cert_file": "",
@@ -414,7 +414,7 @@
     "source": "batch-gcd-import"
   },
   {
-    "apk_name": "京东_15.5.0_APKPure.apk",
+    "apk_name": "\u4eac\u4e1c_15.5.0_APKPure.apk",
     "apk_path": "batch-gcd-import",
     "apk_size": 0,
     "cert_file": "",
@@ -507,7 +507,7 @@
   },
   {
     "apk_name": "config.pt.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/pollykann/extracted/config.pt.apk",
+    "apk_path": "config.pt.apk",
     "apk_size": 49561,
     "cert_file": "03760b4485e9d189.der",
     "cert_sha256": "",
@@ -529,7 +529,7 @@
   },
   {
     "apk_name": "OKX_ Buy Bitcoin BTC & Crypto_6.142.0_APKPure.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/okex/OKX_ Buy Bitcoin BTC & Crypto_6.142.0_APKPure.apk",
+    "apk_path": "OKX_ Buy Bitcoin BTC & Crypto_6.142.0_APKPure.apk",
     "apk_size": 366033457,
     "cert_file": "1bbbef08d97053ca.der",
     "cert_sha256": "",
@@ -550,8 +550,8 @@
     "collected_date": "2026-03-20T06:57:26.000871"
   },
   {
-    "apk_name": "南银法巴消金.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/0310/南银法巴消金.apk",
+    "apk_name": "\u5357\u94f6\u6cd5\u5df4\u6d88\u91d1.apk",
+    "apk_path": "\u5357\u94f6\u6cd5\u5df4\u6d88\u91d1.apk",
     "apk_size": 66647500,
     "cert_file": "6d45e15f20d6e7ef.der",
     "cert_sha256": "",
@@ -573,7 +573,7 @@
   },
   {
     "apk_name": "repacked-aligned.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/0310/repack/repacked-aligned.apk",
+    "apk_path": "repacked-aligned.apk",
     "apk_size": 66154337,
     "cert_file": "317beda27e8410f7.der",
     "cert_sha256": "",
@@ -595,7 +595,7 @@
   },
   {
     "apk_name": "com.htinns.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/huazhuhui/com.htinns.apk",
+    "apk_path": "com.htinns.apk",
     "apk_size": 55852434,
     "cert_file": "1b0d5028076b4ec7.der",
     "cert_sha256": "",
@@ -616,8 +616,8 @@
     "collected_date": "2026-03-20T06:57:26.133942"
   },
   {
-    "apk_name": "携程旅行_8.85.6_APKPure.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/trip.com/携程旅行_8.85.6_APKPure.apk",
+    "apk_name": "\u643a\u7a0b\u65c5\u884c_8.85.6_APKPure.apk",
+    "apk_path": "\u643a\u7a0b\u65c5\u884c_8.85.6_APKPure.apk",
     "apk_size": 99690738,
     "cert_file": "fd2bf422f534f857.der",
     "cert_sha256": "",
@@ -639,7 +639,7 @@
   },
   {
     "apk_name": "Alipay_10.8.30.9000_APKPure.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/alipay/Alipay_10.8.30.9000_APKPure.apk",
+    "apk_path": "Alipay_10.8.30.9000_APKPure.apk",
     "apk_size": 220765310,
     "cert_file": "644d564de2f94a3b.der",
     "cert_sha256": "",
@@ -661,7 +661,7 @@
   },
   {
     "apk_name": "config.mdpi.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/grok/analysis/xapk_extracted/config.mdpi.apk",
+    "apk_path": "config.mdpi.apk",
     "apk_size": 244299,
     "cert_file": "46e54a03ad2cb7a4.der",
     "cert_sha256": "",
@@ -683,7 +683,7 @@
   },
   {
     "apk_name": "trustwallet.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/trustwallet/trustwallet.apk",
+    "apk_path": "trustwallet.apk",
     "apk_size": 194855428,
     "cert_file": "e40dbf7062d9f24b.der",
     "cert_sha256": "",
@@ -705,7 +705,7 @@
   },
   {
     "apk_name": "bybit.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/bybit/bybit.apk",
+    "apk_path": "bybit.apk",
     "apk_size": 267414078,
     "cert_file": "243217ccd41c5eaa.der",
     "cert_sha256": "",
@@ -727,7 +727,7 @@
   },
   {
     "apk_name": "1211.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/0305-apk/1211.apk",
+    "apk_path": "1211.apk",
     "apk_size": 12340767,
     "cert_file": "0ffc5669abb59a46.der",
     "cert_sha256": "",
@@ -749,7 +749,7 @@
   },
   {
     "apk_name": "hidden_payload.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/0305-apk/analysis/hidden_payload.apk",
+    "apk_path": "hidden_payload.apk",
     "apk_size": 459540,
     "cert_file": "4d1932ca2788a6b9.der",
     "cert_sha256": "",
@@ -771,7 +771,7 @@
   },
   {
     "apk_name": "config.ko.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/h1/grab/extracted/config.ko.apk",
+    "apk_path": "config.ko.apk",
     "apk_size": 1397145,
     "cert_file": "29c2a0adb00ff8f2.der",
     "cert_sha256": "",
@@ -793,7 +793,7 @@
   },
   {
     "apk_name": "config.xxhdpi.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/h1/coinbase/extracted/config.xxhdpi.apk",
+    "apk_path": "config.xxhdpi.apk",
     "apk_size": 1032841,
     "cert_file": "df4d0fdf4e151db5.der",
     "cert_sha256": "",
@@ -815,7 +815,7 @@
   },
   {
     "apk_name": "config.pt.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/h1/paypal/extracted/config.pt.apk",
+    "apk_path": "config.pt.apk",
     "apk_size": 2347417,
     "cert_file": "1c1f3c4983e21608.der",
     "cert_sha256": "",
@@ -837,7 +837,7 @@
   },
   {
     "apk_name": "df_live_cmaf.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/h1/tiktok/extracted/df_live_cmaf.apk",
+    "apk_path": "df_live_cmaf.apk",
     "apk_size": 12694,
     "cert_file": "13df4adf8cd0c49a.der",
     "cert_sha256": "",
@@ -859,7 +859,7 @@
   },
   {
     "apk_name": "com.snapchat.android.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/h1/snapchat/extracted/com.snapchat.android.apk",
+    "apk_path": "com.snapchat.android.apk",
     "apk_size": 99696170,
     "cert_file": "ff34261a570a422c.der",
     "cert_sha256": "",
@@ -881,7 +881,7 @@
   },
   {
     "apk_name": "Telegram_12.4.1_APKPure.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/telegram/Telegram_12.4.1_APKPure.apk",
+    "apk_path": "Telegram_12.4.1_APKPure.apk",
     "apk_size": 153758079,
     "cert_file": "40ea030860dc4c3a.der",
     "cert_sha256": "",
@@ -903,7 +903,7 @@
   },
   {
     "apk_name": "config.xxhdpi.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/slack/analysis/xapk_extracted/config.xxhdpi.apk",
+    "apk_path": "config.xxhdpi.apk",
     "apk_size": 4139695,
     "cert_file": "8173fa6018b3f514.der",
     "cert_sha256": "",
@@ -925,7 +925,7 @@
   },
   {
     "apk_name": "imToken_ BTC & ETH Wallet_2.18.0_APKPure.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/0219-imtoken/imToken_ BTC & ETH Wallet_2.18.0_APKPure.apk",
+    "apk_path": "imToken_ BTC & ETH Wallet_2.18.0_APKPure.apk",
     "apk_size": 92642469,
     "cert_file": "40e44afa1481fe22.der",
     "cert_sha256": "",
@@ -947,7 +947,7 @@
   },
   {
     "apk_name": "imtoken_v9b_aligned.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/0219-imtoken/apk_builds/imtoken_v9b_aligned.apk",
+    "apk_path": "imtoken_v9b_aligned.apk",
     "apk_size": 138018316,
     "cert_file": "9f499771164f68a6.der",
     "cert_sha256": "",
@@ -968,8 +968,8 @@
     "collected_date": "2026-03-20T06:57:30.308867"
   },
   {
-    "apk_name": "京东_15.5.0_APKPure.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/jd/京东_15.5.0_APKPure.apk",
+    "apk_name": "\u4eac\u4e1c_15.5.0_APKPure.apk",
+    "apk_path": "\u4eac\u4e1c_15.5.0_APKPure.apk",
     "apk_size": 114491108,
     "cert_file": "96e3ad5b7702cf7e.der",
     "cert_sha256": "",
@@ -991,7 +991,7 @@
   },
   {
     "apk_name": "Binance_ BTC, Crypto and NFTS_3.9.5_APKPure.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/binance/Binance_ BTC, Crypto and NFTS_3.9.5_APKPure.apk",
+    "apk_path": "Binance_ BTC, Crypto and NFTS_3.9.5_APKPure.apk",
     "apk_size": 295038991,
     "cert_file": "1aa648fed347140d.der",
     "cert_sha256": "",
@@ -1013,7 +1013,7 @@
   },
   {
     "apk_name": "vivo Store_4.82.0.5_APKPure.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/vivo/vivo Store_4.82.0.5_APKPure.apk",
+    "apk_path": "vivo Store_4.82.0.5_APKPure.apk",
     "apk_size": 25333617,
     "cert_file": "11c3fe2c10b21f33.der",
     "cert_sha256": "",
@@ -1035,7 +1035,7 @@
   },
   {
     "apk_name": "UnionPay APP_10.2.1_APKPure.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/apk/unionpay/UnionPay APP_10.2.1_APKPure.apk",
+    "apk_path": "UnionPay APP_10.2.1_APKPure.apk",
     "apk_size": 98248193,
     "cert_file": "9ff0d8c43151e06a.der",
     "cert_sha256": "",
@@ -1056,8 +1056,8 @@
     "collected_date": "2026-03-20T06:57:30.694453"
   },
   {
-    "apk_name": "Dragon_2025年08月27日22点13分.apk",
-    "apk_path": "/Users/anwu/Desktop/apk_any/re/安卓/Dragon_2025年08月27日22点13分.apk",
+    "apk_name": "Dragon_2025\u5e7408\u670827\u65e522\u70b913\u5206.apk",
+    "apk_path": "Dragon_2025\u5e7408\u670827\u65e522\u70b913\u5206.apk",
     "apk_size": 19772906,
     "cert_file": "cf820806995cf6d4.der",
     "cert_sha256": "",
@@ -1079,15 +1079,15 @@
   },
   {
     "apk_name": "uptodown-com.openai.chatgpt.apk",
-    "apk_path": "/Users/anwu/Downloads/uptodown-com.openai.chatgpt.apk",
+    "apk_path": "uptodown-com.openai.chatgpt.apk",
     "apk_size": 10221623,
     "cert_file": "5c2e3240f6530873.der",
     "cert_sha256": "",
     "sig_alg": "sha256WithRSAEncryption",
     "sig_category": "sha256",
     "key_bits": 2048,
-    "issuer": "C=ES, ST=Málaga, L=Málaga, O=Uptodown, OU=Uptodown, CN=Uptodown Technologies SL",
-    "subject": "C=ES, ST=Málaga, L=Málaga, O=Uptodown, OU=Uptodown, CN=Uptodown Technologies SL",
+    "issuer": "C=ES, ST=M\u00e1laga, L=M\u00e1laga, O=Uptodown, OU=Uptodown, CN=Uptodown Technologies SL",
+    "subject": "C=ES, ST=M\u00e1laga, L=M\u00e1laga, O=Uptodown, OU=Uptodown, CN=Uptodown Technologies SL",
     "not_before": "May  2 15:16:15 2024 GMT",
     "not_after": "Sep 18 15:16:15 2051 GMT",
     "self_signed": true,
@@ -1101,7 +1101,7 @@
   },
   {
     "apk_name": "app-ocigm-release.apk",
-    "apk_path": "/Users/anwu/Downloads/安全研究/1211/app-ocigm-release.apk",
+    "apk_path": "app-ocigm-release.apk",
     "apk_size": 186724390,
     "cert_file": "4db8a696058ca898.der",
     "cert_sha256": "",
@@ -1122,8 +1122,8 @@
     "collected_date": "2026-03-20T06:57:31.041567"
   },
   {
-    "apk_name": "知识星球（小密圈） - 连接一千位铁杆粉丝，运营高品质社群，实现知识变现_5.27.3_APKPure.apk",
-    "apk_path": "/Users/anwu/Downloads/08_安装包/知识星球（小密圈） - 连接一千位铁杆粉丝，运营高品质社群，实现知识变现_5.27.3_APKPure.apk",
+    "apk_name": "\u77e5\u8bc6\u661f\u7403\uff08\u5c0f\u5bc6\u5708\uff09 - \u8fde\u63a5\u4e00\u5343\u4f4d\u94c1\u6746\u7c89\u4e1d\uff0c\u8fd0\u8425\u9ad8\u54c1\u8d28\u793e\u7fa4\uff0c\u5b9e\u73b0\u77e5\u8bc6\u53d8\u73b0_5.27.3_APKPure.apk",
+    "apk_path": "\u77e5\u8bc6\u661f\u7403\uff08\u5c0f\u5bc6\u5708\uff09 - \u8fde\u63a5\u4e00\u5343\u4f4d\u94c1\u6746\u7c89\u4e1d\uff0c\u8fd0\u8425\u9ad8\u54c1\u8d28\u793e\u7fa4\uff0c\u5b9e\u73b0\u77e5\u8bc6\u53d8\u73b0_5.27.3_APKPure.apk",
     "apk_size": 136452816,
     "cert_file": "08bf4a0614bbd8a5.der",
     "cert_sha256": "",
@@ -1145,7 +1145,7 @@
   },
   {
     "apk_name": "Pawns app.apk",
-    "apk_path": "/Users/anwu/Downloads/08_安装包/Pawns app.apk",
+    "apk_path": "Pawns app.apk",
     "apk_size": 55150788,
     "cert_file": "bcfabfa4e83057cc.der",
     "cert_sha256": "",
@@ -1167,7 +1167,7 @@
   },
   {
     "apk_name": "honeygain_app.apk",
-    "apk_path": "/Users/anwu/Downloads/08_安装包/honeygain_app.apk",
+    "apk_path": "honeygain_app.apk",
     "apk_size": 9826915,
     "cert_file": "2a9a614adcce8cab.der",
     "cert_sha256": "",
@@ -1189,7 +1189,7 @@
   },
   {
     "apk_name": "com.sdu.didi.gsui.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.sdu.didi.gsui.apk",
+    "apk_path": "com.sdu.didi.gsui.apk",
     "apk_size": 126767634,
     "cert_file": "bfd9aa614c814c98.der",
     "cert_sha256": "",
@@ -1211,7 +1211,7 @@
   },
   {
     "apk_name": "com.sf.activity.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.sf.activity.apk",
+    "apk_path": "com.sf.activity.apk",
     "apk_size": 119742945,
     "cert_file": "cd5635be126f6914.der",
     "cert_sha256": "",
@@ -1233,7 +1233,7 @@
   },
   {
     "apk_name": "com.sina.weibo.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.sina.weibo.apk",
+    "apk_path": "com.sina.weibo.apk",
     "apk_size": 224902531,
     "cert_file": "e8e2d2a58589cf0b.der",
     "cert_sha256": "",
@@ -1255,7 +1255,7 @@
   },
   {
     "apk_name": "vip.mytokenpocket.apk",
-    "apk_path": "/tmp/apkeep-dataset/vip.mytokenpocket.apk",
+    "apk_path": "vip.mytokenpocket.apk",
     "apk_size": 106948539,
     "cert_file": "0e0ad84aae658d83.der",
     "cert_sha256": "",
@@ -1277,7 +1277,7 @@
   },
   {
     "apk_name": "com.tencent.wework.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.tencent.wework.apk",
+    "apk_path": "com.tencent.wework.apk",
     "apk_size": 505501219,
     "cert_file": "c392a45e6cf4b14e.der",
     "cert_sha256": "",
@@ -1299,7 +1299,7 @@
   },
   {
     "apk_name": "com.tencent.qqmusic.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.tencent.qqmusic.apk",
+    "apk_path": "com.tencent.qqmusic.apk",
     "apk_size": 208982994,
     "cert_file": "fa1aa1d1f463a053.der",
     "cert_sha256": "",
@@ -1321,7 +1321,7 @@
   },
   {
     "apk_name": "com.facebook.katana.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.facebook.katana.apk",
+    "apk_path": "com.facebook.katana.apk",
     "apk_size": 95190563,
     "cert_file": "0f63feb04eabfc9f.der",
     "cert_sha256": "",
@@ -1343,7 +1343,7 @@
   },
   {
     "apk_name": "com.dianping.v1.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.dianping.v1.apk",
+    "apk_path": "com.dianping.v1.apk",
     "apk_size": 95447154,
     "cert_file": "b29914f03a430d3e.der",
     "cert_sha256": "",
@@ -1365,7 +1365,7 @@
   },
   {
     "apk_name": "com.wf.wellsfargomobile.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.wf.wellsfargomobile.apk",
+    "apk_path": "com.wf.wellsfargomobile.apk",
     "apk_size": 207774830,
     "cert_file": "bc9421088ef796ee.der",
     "cert_sha256": "",
@@ -1387,15 +1387,15 @@
   },
   {
     "apk_name": "com.tencent.mobileqq.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.tencent.mobileqq.apk",
+    "apk_path": "com.tencent.mobileqq.apk",
     "apk_size": 318049279,
     "cert_file": "5715700a49040173.der",
     "cert_sha256": "",
     "sig_alg": "sha1WithRSAEncryption",
     "sig_category": "sha1",
     "key_bits": 1024,
-    "issuer": "C=China, ST=北京, L=北京, O=腾讯, OU=无线业务系统, CN=QQ",
-    "subject": "C=China, ST=北京, L=北京, O=腾讯, OU=无线业务系统, CN=QQ",
+    "issuer": "C=China, ST=\u5317\u4eac, L=\u5317\u4eac, O=\u817e\u8baf, OU=\u65e0\u7ebf\u4e1a\u52a1\u7cfb\u7edf, CN=QQ",
+    "subject": "C=China, ST=\u5317\u4eac, L=\u5317\u4eac, O=\u817e\u8baf, OU=\u65e0\u7ebf\u4e1a\u52a1\u7cfb\u7edf, CN=QQ",
     "not_before": "Apr  6 09:48:17 2010 GMT",
     "not_after": "Jan 20 09:48:17 2284 GMT",
     "self_signed": true,
@@ -1409,7 +1409,7 @@
   },
   {
     "apk_name": "com.miHoYo.Yuanshen.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.miHoYo.Yuanshen.apk",
+    "apk_path": "com.miHoYo.Yuanshen.apk",
     "apk_size": 384725795,
     "cert_file": "09e2e2190536110c.der",
     "cert_sha256": "",
@@ -1431,7 +1431,7 @@
   },
   {
     "apk_name": "com.netflix.mediaclient.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.netflix.mediaclient.apk",
+    "apk_path": "com.netflix.mediaclient.apk",
     "apk_size": 183687943,
     "cert_file": "f0712c4076018442.der",
     "cert_sha256": "",
@@ -1453,7 +1453,7 @@
   },
   {
     "apk_name": "com.Qunar.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.Qunar.apk",
+    "apk_path": "com.Qunar.apk",
     "apk_size": 86880143,
     "cert_file": "93387c2f3c82f01e.der",
     "cert_sha256": "",
@@ -1475,7 +1475,7 @@
   },
   {
     "apk_name": "com.cainiao.wireless.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.cainiao.wireless.apk",
+    "apk_path": "com.cainiao.wireless.apk",
     "apk_size": 94230454,
     "cert_file": "bcbd771440da22f1.der",
     "cert_sha256": "",
@@ -1497,7 +1497,7 @@
   },
   {
     "apk_name": "org.nicegram.messenger.apk",
-    "apk_path": "/tmp/apkeep-dataset/org.nicegram.messenger.apk",
+    "apk_path": "org.nicegram.messenger.apk",
     "apk_size": 23734189,
     "cert_file": "0c0a9be811fd0aee.der",
     "cert_sha256": "",
@@ -1519,7 +1519,7 @@
   },
   {
     "apk_name": "com.netease.cloudmusic.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.netease.cloudmusic.apk",
+    "apk_path": "com.netease.cloudmusic.apk",
     "apk_size": 197273926,
     "cert_file": "d0df3aa0e8f38c33.der",
     "cert_sha256": "",
@@ -1541,15 +1541,15 @@
   },
   {
     "apk_name": "com.qiyi.video.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.qiyi.video.apk",
+    "apk_path": "com.qiyi.video.apk",
     "apk_size": 104951883,
     "cert_file": "e1c422cb2010dbd8.der",
     "cert_sha256": "",
     "sig_alg": "sha1WithRSAEncryption",
     "sig_category": "sha1",
     "key_bits": 1024,
-    "issuer": "C=CN, ST=Beijing, L=Beijing, O=奇艺, OU=奇艺, CN=刘金瑞",
-    "subject": "C=CN, ST=Beijing, L=Beijing, O=奇艺, OU=奇艺, CN=刘金瑞",
+    "issuer": "C=CN, ST=Beijing, L=Beijing, O=\u5947\u827a, OU=\u5947\u827a, CN=\u5218\u91d1\u745e",
+    "subject": "C=CN, ST=Beijing, L=Beijing, O=\u5947\u827a, OU=\u5947\u827a, CN=\u5218\u91d1\u745e",
     "not_before": "Sep 25 07:37:04 2010 GMT",
     "not_after": "Jun 28 07:37:04 2065 GMT",
     "self_signed": true,
@@ -1563,7 +1563,7 @@
   },
   {
     "apk_name": "com.linkedin.android.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.linkedin.android.apk",
+    "apk_path": "com.linkedin.android.apk",
     "apk_size": 54932864,
     "cert_file": "2e2bf9b6b17a3524.der",
     "cert_sha256": "",
@@ -1585,7 +1585,7 @@
   },
   {
     "apk_name": "com.youku.phone.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.youku.phone.apk",
+    "apk_path": "com.youku.phone.apk",
     "apk_size": 107717326,
     "cert_file": "452d48183c2ca320.der",
     "cert_sha256": "",
@@ -1607,7 +1607,7 @@
   },
   {
     "apk_name": "com.microsoft.teams.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.microsoft.teams.apk",
+    "apk_path": "com.microsoft.teams.apk",
     "apk_size": 213326699,
     "cert_file": "a841b1adde2872f9.der",
     "cert_sha256": "",
@@ -1629,7 +1629,7 @@
   },
   {
     "apk_name": "cmb.pb.apk",
-    "apk_path": "/tmp/apkeep-dataset/cmb.pb.apk",
+    "apk_path": "cmb.pb.apk",
     "apk_size": 149218137,
     "cert_file": "7f74b5b83e238fa5.der",
     "cert_sha256": "",
@@ -1651,7 +1651,7 @@
   },
   {
     "apk_name": "com.zhihu.android.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.zhihu.android.apk",
+    "apk_path": "com.zhihu.android.apk",
     "apk_size": 146070489,
     "cert_file": "dc3a5486cd649b16.der",
     "cert_sha256": "",
@@ -1673,7 +1673,7 @@
   },
   {
     "apk_name": "com.samsung.android.spay.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.samsung.android.spay.apk",
+    "apk_path": "com.samsung.android.spay.apk",
     "apk_size": 308530481,
     "cert_file": "1ae2597278560e18.der",
     "cert_sha256": "",
@@ -1695,7 +1695,7 @@
   },
   {
     "apk_name": "com.cmbchina.ccd.pluto.cmbActivity.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.cmbchina.ccd.pluto.cmbActivity.apk",
+    "apk_path": "com.cmbchina.ccd.pluto.cmbActivity.apk",
     "apk_size": 102386617,
     "cert_file": "69f81d84bbe0b85d.der",
     "cert_sha256": "",
@@ -1717,7 +1717,7 @@
   },
   {
     "apk_name": "com.kugou.android.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.kugou.android.apk",
+    "apk_path": "com.kugou.android.apk",
     "apk_size": 167818525,
     "cert_file": "72179915c410bd74.der",
     "cert_sha256": "",
@@ -1739,7 +1739,7 @@
   },
   {
     "apk_name": "com.tmall.wireless.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.tmall.wireless.apk",
+    "apk_path": "com.tmall.wireless.apk",
     "apk_size": 109461034,
     "cert_file": "55a6ae3c333ce90c.der",
     "cert_sha256": "",
@@ -1761,7 +1761,7 @@
   },
   {
     "apk_name": "com.tencent.qqlive.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.tencent.qqlive.apk",
+    "apk_path": "com.tencent.qqlive.apk",
     "apk_size": 126799454,
     "cert_file": "319e8b60aa0c2856.der",
     "cert_sha256": "",
@@ -1783,7 +1783,7 @@
   },
   {
     "apk_name": "com.baidu.searchbox.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.baidu.searchbox.apk",
+    "apk_path": "com.baidu.searchbox.apk",
     "apk_size": 173335706,
     "cert_file": "1aabfd5ec47ec4d4.der",
     "cert_sha256": "",
@@ -1805,7 +1805,7 @@
   },
   {
     "apk_name": "com.sankuai.meituan.takeoutnew.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.sankuai.meituan.takeoutnew.apk",
+    "apk_path": "com.sankuai.meituan.takeoutnew.apk",
     "apk_size": 60118434,
     "cert_file": "396f4e270f9316bb.der",
     "cert_sha256": "",
@@ -1827,7 +1827,7 @@
   },
   {
     "apk_name": "com.pingan.paces.ccms.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.pingan.paces.ccms.apk",
+    "apk_path": "com.pingan.paces.ccms.apk",
     "apk_size": 254840404,
     "cert_file": "70f4b665f4881488.der",
     "cert_sha256": "",
@@ -1849,7 +1849,7 @@
   },
   {
     "apk_name": "com.UCMobile.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.UCMobile.apk",
+    "apk_path": "com.UCMobile.apk",
     "apk_size": 128220601,
     "cert_file": "eae22e6f22567689.der",
     "cert_sha256": "",
@@ -1871,7 +1871,7 @@
   },
   {
     "apk_name": "com.autonavi.minimap.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.autonavi.minimap.apk",
+    "apk_path": "com.autonavi.minimap.apk",
     "apk_size": 164707652,
     "cert_file": "a432a9e1f40e0f7c.der",
     "cert_sha256": "",
@@ -1893,7 +1893,7 @@
   },
   {
     "apk_name": "com.king.candycrushsaga.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.king.candycrushsaga.apk",
+    "apk_path": "com.king.candycrushsaga.apk",
     "apk_size": 157746120,
     "cert_file": "0b53ae3f8c17b95b.der",
     "cert_sha256": "",
@@ -1915,7 +1915,7 @@
   },
   {
     "apk_name": "com.cib.cibmb.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.cib.cibmb.apk",
+    "apk_path": "com.cib.cibmb.apk",
     "apk_size": 245074550,
     "cert_file": "138ea25c246e1c5d.der",
     "cert_sha256": "",
@@ -1937,15 +1937,15 @@
   },
   {
     "apk_name": "com.chinamworld.bocmbci.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.chinamworld.bocmbci.apk",
+    "apk_path": "com.chinamworld.bocmbci.apk",
     "apk_size": 203571474,
     "cert_file": "a6c80a953d148ecb.der",
     "cert_sha256": "",
     "sig_alg": "sha1WithRSAEncryption",
     "sig_category": "sha1",
     "key_bits": 1024,
-    "issuer": "C=CN, ST=北京, L=西城区, O=中国银行, OU=电子银行部, CN=中国银行",
-    "subject": "C=CN, ST=北京, L=西城区, O=中国银行, OU=电子银行部, CN=中国银行",
+    "issuer": "C=CN, ST=\u5317\u4eac, L=\u897f\u57ce\u533a, O=\u4e2d\u56fd\u94f6\u884c, OU=\u7535\u5b50\u94f6\u884c\u90e8, CN=\u4e2d\u56fd\u94f6\u884c",
+    "subject": "C=CN, ST=\u5317\u4eac, L=\u897f\u57ce\u533a, O=\u4e2d\u56fd\u94f6\u884c, OU=\u7535\u5b50\u94f6\u884c\u90e8, CN=\u4e2d\u56fd\u94f6\u884c",
     "not_before": "Jun  7 01:27:55 2011 GMT",
     "not_after": "Feb  6 01:27:55 2511 GMT",
     "self_signed": true,
@@ -1959,7 +1959,7 @@
   },
   {
     "apk_name": "com.alibaba.android.rimet.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.alibaba.android.rimet.apk",
+    "apk_path": "com.alibaba.android.rimet.apk",
     "apk_size": 294037092,
     "cert_file": "93b1fa4c26620263.der",
     "cert_sha256": "",
@@ -1981,7 +1981,7 @@
   },
   {
     "apk_name": "com.zhiliaoapp.musically.apk",
-    "apk_path": "/tmp/apkeep-dataset/com.zhiliaoapp.musically.apk",
+    "apk_path": "com.zhiliaoapp.musically.apk",
     "apk_size": 518946394,
     "cert_file": "3ac43906f1a9437b.der",
     "cert_sha256": "",

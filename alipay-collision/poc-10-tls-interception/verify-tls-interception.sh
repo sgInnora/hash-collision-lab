@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "╔═══════════════════════════════════════════════════════════════╗"
-echo "║  TLS Interception Analysis — Factored RSA Key Exploitation  ║"
+echo "║  TLS Interception Analysis — Impact of Factored RSA Keys    ║"
 echo "╚═══════════════════════════════════════════════════════════════╝"
 echo ""
 

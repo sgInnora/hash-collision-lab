@@ -32,7 +32,7 @@ echo "║           Hash Collision Lab — Full Verification Suite           ║
 echo "║                    Innora AI Security Research                   ║"
 echo "╚═══════════════════════════════════════════════════════════════════╝"
 echo ""
-echo "Running all PoCs in attacker kill-chain order..."
+echo "Running all PoC verification scripts..."
 echo ""
 
 # Phase 1: Reconnaissance — Hash collision fundamentals
@@ -53,12 +53,12 @@ run_poc "APK v1 Janus Attack (CVE-2017-13156)" "alipay-collision/poc-05-apk-v1-j
 run_poc "APK v1 Signature Forgery" "alipay-collision/poc-05-apk-v1-signature-forgery/verify-sig-forgery.sh"
 run_poc "Rogue Certificate Forgery" "alipay-collision/poc-06-rogue-cert-forgery/verify-rogue-cert.sh"
 
-# Phase 4: Full Compromise — Large-scale and chain attacks
-echo "═══ PHASE 4: FULL COMPROMISE — Large-Scale & Chain Attacks ═══"
+# Phase 4: Impact Assessment — Large-scale and ecosystem analysis
+echo "═══ PHASE 4: IMPACT ASSESSMENT — Ecosystem Analysis ═══"
 run_poc "Batch GCD (RSA Key Factoring)" "alipay-collision/poc-07-batch-gcd/verify-batch-gcd.sh"
 run_poc "SHA-1 Certificate Collision" "alipay-collision/poc-07-sha1-cert-collision/verify-sha1-cert.sh"
 run_poc "APK V1 Signature Bypass" "alipay-collision/poc-09-apk-v1-bypass/verify-apk-bypass.sh"
-run_poc "TLS Interception (Factored Keys)" "alipay-collision/poc-10-tls-interception/verify-tls-interception.sh"
+run_poc "TLS Interception Impact (Static Analysis)" "alipay-collision/poc-10-tls-interception/verify-tls-interception.sh"
 run_poc "Attack Timeline (2004-2026)" "alipay-collision/poc-11-timeline/verify-timeline.sh"
 
 # Summary
@@ -77,6 +77,4 @@ else
   echo "⚠️  $FAIL PoC(s) failed. Check output above for details."
 fi
 echo ""
-echo "Conclusion: Alipay's APK signing infrastructure uses md5WithRSAEncryption"
-echo "with RSA-1024 (2009-era), presenting a comprehensive attack surface across"
-echo "hash collisions, key management, signature scheme, and cryptographic design."
+echo "Analysis complete. See README.md and IACR ePrint 2026/108361 for full details."

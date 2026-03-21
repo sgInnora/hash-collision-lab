@@ -36,8 +36,8 @@ def analyze_des_keys():
     print()
 
     keys = [
-        {"hex": "2d31313531353931", "ascii": "-1151591", "name": "Key 1"},
-        {"hex": "636865636b4b6579", "ascii": "checkKey", "name": "Key 2"},
+        {"hex": "5245444143544544", "ascii": "REDACTED", "name": "Key 1"},
+        {"hex": "5245444143544544", "ascii": "REDACTED", "name": "Key 2"},
     ]
 
     ideal_entropy = 8.0  # bits per byte for perfect random
