@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this research, please cite the IACR ePrint paper."
+title: "Hash Collision Lab"
+type: software
+authors:
+  - family-names: "Feng"
+    given-names: "Jiqiang"
+    email: "feng@innora.ai"
+    affiliation: "Innora AI Security Research Lab"
+repository-code: "https://github.com/sgInnora/hash-collision-lab"
+url: "https://innora.ai"
+license: MIT
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Feng"
+      given-names: "Jiqiang"
+      email: "feng@innora.ai"
+      affiliation: "Innora AI Security Research Lab"
+  title: "Broken By Design: A Longitudinal Analysis of Cryptographic Failures in Alipay Mobile Payment Infrastructure"
+  journal: "Cryptology ePrint Archive"
+  year: 2026
+  url: "https://eprint.iacr.org/2026/526"

@@ -1,12 +1,18 @@
 # Hash Collision Lab
 
-> **Academic Paper**: Feng, J. (2026). *Broken By Design: A Longitudinal Analysis of Cryptographic Failures in Alipay Mobile Payment Infrastructure*. IACR Cryptology ePrint Archive, Report 2026/526.
+> **Academic Paper**: Feng, J. (2026). *Broken By Design: A Longitudinal Analysis of Cryptographic Failures in Alipay Mobile Payment Infrastructure*. IACR Cryptology ePrint Archive, Report 2026/526. [[PDF]](https://eprint.iacr.org/2026/526.pdf)
+
+> **Alipay Mobile Payment Attack Surface — The Full-Stack Analysis by [Innora AI](https://innora.ai)**
+>
+> | Layer | Repository | Findings |
+> |-------|-----------|----------|
+> | Runtime | [alipay-deeplink-research](https://github.com/sgInnora/alipay-deeplink-research) | 17 vulnerabilities, CVSS 9.3 |
+> | SDK | [alipay-securityguard-analysis](https://github.com/sgInnora/alipay-securityguard-analysis) | 9 CVEs, AVMP VM bypass, 97% unprotected APIs |
+> | Cryptography | **[hash-collision-lab](https://github.com/sgInnora/hash-collision-lab)** (this repo) | 15 PoCs, IACR ePrint [2026/526](https://eprint.iacr.org/2026/526) |
 
 **A systematic cryptographic analysis of legacy APK signing infrastructure, demonstrating that `md5WithRSAEncryption` + RSA-1024 certificates — currently observed in active deployments — are susceptible to known cryptographic attacks.**
 
 This repository contains 15 verified proof-of-concept demonstrations against cryptographic weaknesses in APK signing certificates and related infrastructure. Every claim is backed by reproducible code and verifiable artifacts.
-
-> [Innora AI](https://innora.ai) Security Research Lab
 
 ## Disclaimer
 
