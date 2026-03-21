@@ -1,0 +1,345 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="920" viewBox="0 0 800 920">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#161b22;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Layer card gradients -->
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a0e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a0e14;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="amberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1100;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a1a00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#020c1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#061224;stop-opacity:1" />
+    </linearGradient>
+
+    <!-- Glow filters -->
+    <filter id="glowRed" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowAmber" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="subtleShadow" x="-5%" y="-5%" width="110%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="headerGlow">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Arrow marker red -->
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560" opacity="0.9"/>
+    </marker>
+    <!-- Arrow marker amber -->
+    <marker id="arrowAmber" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b" opacity="0.9"/>
+    </marker>
+
+    <!-- Clip paths for rounded cards -->
+    <clipPath id="clipCard1">
+      <rect x="40" y="130" width="720" height="200" rx="12"/>
+    </clipPath>
+    <clipPath id="clipCard2">
+      <rect x="40" y="410" width="720" height="200" rx="12"/>
+    </clipPath>
+    <clipPath id="clipCard3">
+      <rect x="40" y="690" width="720" height="180" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- BACKGROUND                                      -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <rect width="800" height="920" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid overlay -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.15" opacity="0.08"/>
+  </pattern>
+  <rect width="800" height="920" fill="url(#grid)"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="800" height="3" fill="url(#headerAccent)"/>
+  <linearGradient id="headerAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+    <stop offset="0%" style="stop-color:#e94560;stop-opacity:0"/>
+    <stop offset="30%" style="stop-color:#e94560;stop-opacity:1"/>
+    <stop offset="50%" style="stop-color:#f59e0b;stop-opacity:1"/>
+    <stop offset="70%" style="stop-color:#3b82f6;stop-opacity:1"/>
+    <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
+  </linearGradient>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- HEADER                                          -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- Badge -->
+  <rect x="300" y="18" width="200" height="22" rx="11" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+  <circle cx="316" cy="29" r="5" fill="#e94560" opacity="0.9"/>
+  <text x="326" y="33" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10.5" fill="#8b949e" letter-spacing="0.5">SECURITY RESEARCH · 2026</text>
+
+  <!-- Main title -->
+  <text x="400" y="68" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="22" font-weight="700" fill="#f0f6fc" text-anchor="middle" letter-spacing="-0.3">Alipay Mobile Payment</text>
+  <text x="400" y="94" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="22" font-weight="700" fill="#f0f6fc" text-anchor="middle" letter-spacing="-0.3">Attack Surface — Full-Stack Analysis</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="116" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12" fill="#6e7681" text-anchor="middle" letter-spacing="0.8">INNORA AI · VULNERABILITY CHAIN OVERVIEW</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- LAYER 1: RUNTIME — DeepLink + JSBridge          -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Card background -->
+  <rect x="40" y="130" width="720" height="200" rx="12" fill="url(#redGrad)" filter="url(#subtleShadow)"/>
+  <!-- Left accent bar -->
+  <rect x="40" y="130" width="4" height="200" rx="2" fill="#e94560" filter="url(#glowRed)"/>
+  <!-- Top border -->
+  <rect x="44" y="130" width="716" height="1" rx="0.5" fill="#e94560" opacity="0.3"/>
+  <!-- Card inner border -->
+  <rect x="40" y="130" width="720" height="200" rx="12" fill="none" stroke="#e94560" stroke-width="1" opacity="0.25"/>
+
+  <!-- Layer number badge -->
+  <circle cx="76" cy="156" r="14" fill="#e94560" opacity="0.15"/>
+  <circle cx="76" cy="156" r="14" fill="none" stroke="#e94560" stroke-width="1.5" opacity="0.6"/>
+  <text x="76" y="161" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12" font-weight="700" fill="#e94560" text-anchor="middle">01</text>
+
+  <!-- Layer label -->
+  <text x="101" y="150" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#e94560" letter-spacing="1.5" opacity="0.8">LAYER 1 · RUNTIME</text>
+  <!-- Title -->
+  <text x="101" y="167" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#f0f6fc" letter-spacing="-0.3">DeepLink + JSBridge</text>
+
+  <!-- Stats badges -->
+  <rect x="101" y="177" width="150" height="24" rx="6" fill="#e94560" opacity="0.18"/>
+  <rect x="101" y="177" width="150" height="24" rx="6" fill="none" stroke="#e94560" stroke-width="1" opacity="0.5"/>
+  <text x="176" y="193" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#e94560" text-anchor="middle">17 Vulnerabilities</text>
+
+  <rect x="261" y="177" width="105" height="24" rx="6" fill="#e94560" opacity="0.18"/>
+  <rect x="261" y="177" width="105" height="24" rx="6" fill="none" stroke="#e94560" stroke-width="1" opacity="0.5"/>
+  <text x="313" y="193" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="700" fill="#ff6b7a" text-anchor="middle">CVSS 9.3 ⬆</text>
+
+  <!-- Divider -->
+  <line x1="101" y1="212" x2="740" y2="212" stroke="#e94560" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Sub-items -->
+  <!-- Item 1 -->
+  <circle cx="118" cy="236" r="4" fill="#e94560" opacity="0.8"/>
+  <circle cx="118" cy="236" r="4" fill="none" stroke="#e94560" stroke-width="1.5" opacity="0.4"/>
+  <text x="130" y="232" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">Whitelist bypass</text>
+  <text x="130" y="246" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">Arbitrary scheme injection via malformed DeepLink URI parsing</text>
+
+  <!-- Item 2 -->
+  <circle cx="338" cy="236" r="4" fill="#e94560" opacity="0.8"/>
+  <circle cx="338" cy="236" r="4" fill="none" stroke="#e94560" stroke-width="1.5" opacity="0.4"/>
+  <text x="350" y="232" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">GPS extraction</text>
+  <text x="350" y="246" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">Precise geolocation leak via JSBridge without permission</text>
+
+  <!-- Item 3 -->
+  <circle cx="118" cy="266" r="4" fill="#e94560" opacity="0.8"/>
+  <circle cx="118" cy="266" r="4" fill="none" stroke="#e94560" stroke-width="1.5" opacity="0.4"/>
+  <text x="130" y="262" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">Transfer manipulation</text>
+  <text x="130" y="276" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">Payment amount/recipient tamper via unvalidated bridge call</text>
+
+  <!-- Risk badge top-right -->
+  <rect x="670" y="140" width="76" height="30" rx="6" fill="#e94560" opacity="0.12"/>
+  <rect x="670" y="140" width="76" height="30" rx="6" fill="none" stroke="#e94560" stroke-width="1" opacity="0.4"/>
+  <text x="708" y="152" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="8.5" fill="#e94560" text-anchor="middle" letter-spacing="0.5">CRITICAL</text>
+  <text x="708" y="164" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="9" font-weight="700" fill="#ff6b7a" text-anchor="middle">RISK</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ARROW 1 → 2                                     -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <g opacity="0.85">
+    <!-- Arrow shaft -->
+    <line x1="400" y1="337" x2="400" y2="398" stroke="#e94560" stroke-width="2" stroke-dasharray="4,3" opacity="0.6" marker-end="url(#arrowRed)"/>
+    <!-- Attack label -->
+    <rect x="318" y="352" width="164" height="20" rx="10" fill="#161b22"/>
+    <rect x="318" y="352" width="164" height="20" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+    <text x="400" y="365" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="9.5" fill="#8b949e" text-anchor="middle" letter-spacing="0.5">ATTACK ESCALATION CHAIN ↓</text>
+    <!-- Side dots -->
+    <circle cx="308" cy="362" r="3" fill="#e94560" opacity="0.5"/>
+    <circle cx="492" cy="362" r="3" fill="#f59e0b" opacity="0.5"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- LAYER 2: SDK — SecurityGuard                    -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Card background -->
+  <rect x="40" y="410" width="720" height="200" rx="12" fill="url(#amberGrad)" filter="url(#subtleShadow)"/>
+  <!-- Left accent bar -->
+  <rect x="40" y="410" width="4" height="200" rx="2" fill="#f59e0b"/>
+  <!-- Top border -->
+  <rect x="44" y="410" width="716" height="1" fill="#f59e0b" opacity="0.3"/>
+  <!-- Card inner border -->
+  <rect x="40" y="410" width="720" height="200" rx="12" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.25"/>
+
+  <!-- Layer number badge -->
+  <circle cx="76" cy="436" r="14" fill="#f59e0b" opacity="0.15"/>
+  <circle cx="76" cy="436" r="14" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
+  <text x="76" y="441" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12" font-weight="700" fill="#f59e0b" text-anchor="middle">02</text>
+
+  <!-- Layer label -->
+  <text x="101" y="430" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#f59e0b" letter-spacing="1.5" opacity="0.8">LAYER 2 · SDK</text>
+  <!-- Title -->
+  <text x="101" y="447" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#f0f6fc" letter-spacing="-0.3">SecurityGuard SDK</text>
+
+  <!-- Stats badges -->
+  <rect x="101" y="457" width="90" height="24" rx="6" fill="#f59e0b" opacity="0.18"/>
+  <rect x="101" y="457" width="90" height="24" rx="6" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+  <text x="146" y="473" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#f59e0b" text-anchor="middle">9 CVEs</text>
+
+  <rect x="201" y="457" width="155" height="24" rx="6" fill="#f59e0b" opacity="0.18"/>
+  <rect x="201" y="457" width="155" height="24" rx="6" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+  <text x="278" y="473" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#fbbf24" text-anchor="middle">MITRE #2005801</text>
+
+  <!-- Divider -->
+  <line x1="101" y1="492" x2="740" y2="492" stroke="#f59e0b" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Sub-items -->
+  <!-- Item 1 -->
+  <circle cx="118" cy="516" r="4" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="118" cy="516" r="4" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.4"/>
+  <text x="130" y="512" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">AVMP VM bypass</text>
+  <text x="130" y="526" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">Anti-tampering VM defeated via opcode confusion &amp; state corruption</text>
+
+  <!-- Item 2 -->
+  <circle cx="338" cy="516" r="4" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="338" cy="516" r="4" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.4"/>
+  <text x="350" y="512" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">97% unprotected APIs</text>
+  <text x="350" y="526" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">Critical payment APIs lack SDK integrity enforcement</text>
+
+  <!-- Item 3 -->
+  <circle cx="118" cy="546" r="4" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="118" cy="546" r="4" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.4"/>
+  <text x="130" y="542" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">No cert pinning</text>
+  <text x="130" y="556" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">TLS certificate pinning absent — MITM trivially feasible</text>
+
+  <!-- Risk badge top-right -->
+  <rect x="670" y="420" width="76" height="30" rx="6" fill="#f59e0b" opacity="0.12"/>
+  <rect x="670" y="420" width="76" height="30" rx="6" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.4"/>
+  <text x="708" y="432" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="8.5" fill="#f59e0b" text-anchor="middle" letter-spacing="0.5">HIGH</text>
+  <text x="708" y="444" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="9" font-weight="700" fill="#fbbf24" text-anchor="middle">RISK</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ARROW 2 → 3                                     -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <g opacity="0.85">
+    <line x1="400" y1="617" x2="400" y2="678" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,3" opacity="0.6" marker-end="url(#arrowAmber)"/>
+    <rect x="318" y="632" width="164" height="20" rx="10" fill="#161b22"/>
+    <rect x="318" y="632" width="164" height="20" rx="10" fill="none" stroke="#30363d" stroke-width="1"/>
+    <text x="400" y="645" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="9.5" fill="#8b949e" text-anchor="middle" letter-spacing="0.5">SIGNING TRUST COLLAPSE ↓</text>
+    <circle cx="308" cy="642" r="3" fill="#f59e0b" opacity="0.5"/>
+    <circle cx="492" cy="642" r="3" fill="#3b82f6" opacity="0.5"/>
+  </g>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- LAYER 3: CRYPTOGRAPHY — APK Signing             -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- Card background -->
+  <rect x="40" y="690" width="720" height="190" rx="12" fill="url(#blueGrad)" filter="url(#subtleShadow)"/>
+  <!-- Left accent bar -->
+  <rect x="40" y="690" width="4" height="190" rx="2" fill="#3b82f6"/>
+  <!-- Top border -->
+  <rect x="44" y="690" width="716" height="1" fill="#3b82f6" opacity="0.3"/>
+  <!-- Card inner border -->
+  <rect x="40" y="690" width="720" height="190" rx="12" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.25"/>
+
+  <!-- Layer number badge -->
+  <circle cx="76" cy="716" r="14" fill="#3b82f6" opacity="0.15"/>
+  <circle cx="76" cy="716" r="14" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.6"/>
+  <text x="76" y="721" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12" font-weight="700" fill="#3b82f6" text-anchor="middle">03</text>
+
+  <!-- Layer label -->
+  <text x="101" y="710" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#3b82f6" letter-spacing="1.5" opacity="0.8">LAYER 3 · CRYPTOGRAPHY</text>
+  <!-- Title -->
+  <text x="101" y="727" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="20" font-weight="700" fill="#f0f6fc" letter-spacing="-0.3">APK Signing Infrastructure</text>
+
+  <!-- Stats badges -->
+  <rect x="101" y="737" width="90" height="24" rx="6" fill="#3b82f6" opacity="0.18"/>
+  <rect x="101" y="737" width="90" height="24" rx="6" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+  <text x="146" y="753" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#3b82f6" text-anchor="middle">15 PoCs</text>
+
+  <rect x="201" y="737" width="140" height="24" rx="6" fill="#3b82f6" opacity="0.18"/>
+  <rect x="201" y="737" width="140" height="24" rx="6" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.5"/>
+  <text x="271" y="753" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#60a5fa" text-anchor="middle">IACR 2026/526</text>
+
+  <!-- Divider -->
+  <line x1="101" y1="772" x2="740" y2="772" stroke="#3b82f6" stroke-width="0.5" opacity="0.2"/>
+
+  <!-- Sub-items — 4 items in 2x2 grid -->
+  <!-- Item 1 -->
+  <circle cx="118" cy="793" r="4" fill="#3b82f6" opacity="0.8"/>
+  <circle cx="118" cy="793" r="4" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.4"/>
+  <text x="130" y="789" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">MD5 collision</text>
+  <text x="130" y="799" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">Chosen-prefix collision in ~9 seconds (chosen-prefix)</text>
+
+  <!-- Item 2 -->
+  <circle cx="398" cy="793" r="4" fill="#3b82f6" opacity="0.8"/>
+  <circle cx="398" cy="793" r="4" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.4"/>
+  <text x="410" y="789" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">RSA-1024 factored</text>
+  <text x="410" y="799" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">Signing key factored via cloud compute (~$50K)</text>
+
+  <!-- Item 3 -->
+  <circle cx="118" cy="821" r="4" fill="#3b82f6" opacity="0.8"/>
+  <circle cx="118" cy="821" r="4" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.4"/>
+  <text x="130" y="817" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">Batch GCD — 28 keys</text>
+  <text x="130" y="827" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">Shared prime factors recovered across 28 weak RSA keys</text>
+
+  <!-- Item 4 -->
+  <circle cx="398" cy="821" r="4" fill="#3b82f6" opacity="0.8"/>
+  <circle cx="398" cy="821" r="4" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity="0.4"/>
+  <text x="410" y="817" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" fill="#c9d1d9">DES hardcoded keys</text>
+  <text x="410" y="827" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681">Static DES/3DES keys embedded in SDK binary</text>
+
+  <!-- Risk badge top-right -->
+  <rect x="670" y="700" width="76" height="30" rx="6" fill="#3b82f6" opacity="0.12"/>
+  <rect x="670" y="700" width="76" height="30" rx="6" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.4"/>
+  <text x="708" y="712" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="8.5" fill="#3b82f6" text-anchor="middle" letter-spacing="0.5">SYSTEMIC</text>
+  <text x="708" y="724" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="9" font-weight="700" fill="#60a5fa" text-anchor="middle">RISK</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- FOOTER                                          -->
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- Divider line -->
+  <line x1="40" y1="896" x2="760" y2="896" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Branding left -->
+  <circle cx="57" cy="910" r="6" fill="none" stroke="#58a6ff" stroke-width="1.5"/>
+  <circle cx="57" cy="910" r="2.5" fill="#58a6ff"/>
+  <text x="70" y="914" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="700" fill="#58a6ff" letter-spacing="0.3">Innora AI</text>
+  <text x="130" y="914" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" fill="#6e7681">Security Research</text>
+
+  <!-- Center tag -->
+  <text x="400" y="914" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#484f58" text-anchor="middle" letter-spacing="0.5">For responsible disclosure purposes only</text>
+
+  <!-- Right: summary stats -->
+  <text x="755" y="908" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="10" fill="#6e7681" text-anchor="end">41 issues · 15 PoCs · 3 layers</text>
+  <text x="755" y="919" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="9" fill="#484f58" text-anchor="end">innora.ai · 2026</text>
+
+</svg>
