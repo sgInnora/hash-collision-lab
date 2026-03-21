@@ -6,9 +6,9 @@ This document records the coordinated disclosure process for the vulnerabilities
 
 | Date | Event |
 |------|-------|
-| 2026-02-15 | Initial vulnerability analysis began |
+| 2026-02-16 | Initial vulnerability analysis began |
 | 2026-03-01 | Full attack chain verification completed (15 PoCs) |
-| 2026-03-05 | Vulnerability report submitted to Ant Group Security Response Center (AFSRC) |
+| 2026-02-25 | First vulnerability report submitted to Ant Group (4 rounds through 2026-03-07) |
 | 2026-03-10 | Vendor response received: findings classified as "normal functionality"; no remediation planned |
 | 2026-03-16 | IACR ePrint preprint submitted (2026/526) |
 | 2026-03-22 | Public release of research repository with redacted sensitive data |
