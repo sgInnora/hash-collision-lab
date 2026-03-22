@@ -1,5 +1,7 @@
 # Hash Collision Lab
 
+[![CI](https://github.com/sgInnora/hash-collision-lab/actions/workflows/verify.yml/badge.svg)](https://github.com/sgInnora/hash-collision-lab/actions/workflows/verify.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![IACR](https://img.shields.io/badge/IACR-2026%2F526-blue.svg)](https://eprint.iacr.org/2026/526)
+
 > **Academic Paper**: Feng, J. (2026). *Broken By Design: A Longitudinal Analysis of Cryptographic Failures in Alipay Mobile Payment Infrastructure*. IACR Cryptology ePrint Archive, Report 2026/526. [[PDF]](https://eprint.iacr.org/2026/526.pdf)
 
 > **Alipay Mobile Payment Attack Surface — The Full-Stack Analysis by [Innora AI](https://innora.ai)**
